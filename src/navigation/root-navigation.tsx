@@ -1,10 +1,10 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {ROUTES} from '../constants/routes';
-import {News} from '../components/pages/News';
+import {Tabs} from './tab-navigator';
 
 type ParamList = {
-  News: undefined;
+  Tabs: undefined;
 };
 
 const Stack = createStackNavigator<ParamList>();
@@ -13,8 +13,8 @@ export const RootStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={ROUTES.NEWS}>
-      <Stack.Screen name={ROUTES.NEWS} component={News} />
+      initialRouteName={ROUTES.TABS}>
+      <Stack.Screen name={ROUTES.TABS} component={Tabs} />
     </Stack.Navigator>
   );
 };

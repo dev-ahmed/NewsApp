@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from '../../atoms/View';
+import {Text} from '../../atoms/Text';
 import styles from './styles';
 
 export const News: React.FC = React.memo(({}) => {

@@ -1,10 +1,18 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
 import {RootStack} from './root-navigation';
+import {useColorScheme} from 'react-native';
 
 export const Container = () => {
+  const scheme = useColorScheme();
+  const isDark = scheme === 'dark';
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
       <RootStack />
     </NavigationContainer>
   );
