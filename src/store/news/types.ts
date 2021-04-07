@@ -1,29 +1,14 @@
-import {AxiosResponse} from 'axios';
+import {Article} from '../../interfaces/Article';
 
-export const LIST_NEWS = 'SEARCH_MOVIES';
-export const MOVIES_DETAILS = 'MOVIES_DETAILS';
+export const LIST_NEWS = 'LIST_NEWS';
 
-interface Source {
-  id: string;
-  name: string;
-}
-
-interface News {
-  source: Source;
-  author: string;
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
-}
-
-export interface NewsList {
+export type NewsAction = {
   type: typeof LIST_NEWS;
-  payload: AxiosResponse<News[]>;
-}
+  news: Article[] | undefined;
+};
 
-export interface MoviesState {
-  news: NewsList;
-}
+export type NewsState = {
+  news: Article[] | undefined;
+};
+
+export type NewsDispatch = (args: NewsAction) => NewsAction;

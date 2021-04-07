@@ -22,7 +22,7 @@ const request = (method: Method, url: string, requestObject: RequestObject) => {
   };
 
   const defaultParams: object = {
-    api_key: api_key,
+    apiKey: api_key,
     ...params,
   };
 
