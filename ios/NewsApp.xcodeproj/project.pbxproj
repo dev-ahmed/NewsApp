@@ -13,7 +13,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2A14FA5985A7E9A6A96FBC05 /* libPods-NewsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDD706CE94D91E96BD38566 /* libPods-NewsApp.a */; };
 		2DDED788A168890B978CCDA6 /* libPods-NewsApp-NewsAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC68B05374D8EA07C4C0E59 /* libPods-NewsApp-NewsAppTests.a */; };
+		2F515BE07DF049659B29BE17 /* SpaceMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D9BA9A0F1664ED788F5769F /* SpaceMono-Regular.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9610BFA8B287477B90F0C4DC /* SpaceMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73471101D4224CA3AC2BC43D /* SpaceMono-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NewsApp/main.m; sourceTree = "<group>"; };
 		2EB3C23FC91D011348430125 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		2FDD706CE94D91E96BD38566 /* libPods-NewsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D9BA9A0F1664ED788F5769F /* SpaceMono-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceMono-Regular.ttf"; path = "../src/assets/fonts/SpaceMono-Regular.ttf"; sourceTree = "<group>"; };
+		73471101D4224CA3AC2BC43D /* SpaceMono-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SpaceMono-Bold.ttf"; path = "../src/assets/fonts/SpaceMono-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NewsApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B56D45C7857D7D5F74231054 /* Pods-NewsApp-NewsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp-NewsAppTests.release.xcconfig"; path = "Target Support Files/Pods-NewsApp-NewsAppTests/Pods-NewsApp-NewsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		BEC68B05374D8EA07C4C0E59 /* libPods-NewsApp-NewsAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewsApp-NewsAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +122,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		544CDC37A79647BE93160926 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				73471101D4224CA3AC2BC43D /* SpaceMono-Bold.ttf */,
+				3D9BA9A0F1664ED788F5769F /* SpaceMono-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +148,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				1A015514A6D42C40E8DFDD95 /* Pods */,
+				544CDC37A79647BE93160926 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -245,6 +260,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9610BFA8B287477B90F0C4DC /* SpaceMono-Bold.ttf in Resources */,
+				2F515BE07DF049659B29BE17 /* SpaceMono-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
