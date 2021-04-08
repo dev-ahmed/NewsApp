@@ -1,10 +1,9 @@
-import {configureStore, Store} from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
 import {useDispatch} from 'react-redux';
 import thunk from 'redux-thunk';
 import {newsReducer} from './news/reducer';
-import {NewsAction, NewsState} from './news/types';
 
-export const store: Store<NewsState, NewsAction> = configureStore({
+export const store = configureStore({
   reducer: newsReducer,
   middleware: [thunk] as const,
 });

@@ -1,15 +1,20 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useCallbackOne} from 'use-memo-one';
-import {getNews} from '../../../store/news/actions';
+import {getNews, searchArticles} from '../../../store/news/actions';
 import {NewsState} from '../../../store/news/types';
 import {Container} from '../../atoms/Container';
+import {SearchBar} from '../../organisms/SearchBar';
 import {NewsList} from '../../templates/NewsList';
 
 export const News: React.FC = React.memo(({}) => {
+  const [refreshing, setRefreshing] = useState(false);
+  const [searchKey, setSearchKey] = useState('');
+
   const dispatch = useDispatch();
-  const {news} = useSelector((state: NewsState) => ({
+  const {news, search_result} = useSelector((state: NewsState) => ({
     news: state.news,
+    search_result: state.search_result,
   }));
 
   const initialFetch = useCallbackOne(() => {
@@ -20,9 +25,25 @@ export const News: React.FC = React.memo(({}) => {
     initialFetch();
   }, [initialFetch]);
 
+  const _onRefresh = async () => {
+    setRefreshing(true);
+    await dispatch(getNews());
+    setRefreshing(false);
+  };
+
+  const _onSearch = async (text: string) => {
+    setSearchKey(text);
+    await dispatch(searchArticles(text));
+  };
+
   return (
     <Container>
-      <NewsList data={news} />
+      <NewsList
+        searchBar={<SearchBar value={searchKey} onSearch={_onSearch} />}
+        refreshing={refreshing}
+        onRefresh={_onRefresh}
+        data={search_result && search_result?.length > 0 ? search_result : news}
+      />
     </Container>
   );
 });

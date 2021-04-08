@@ -1,19 +1,23 @@
+import {useTheme} from '@react-navigation/native';
 import React from 'react';
-import {View, Text} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {Article} from '../../../interfaces/Article';
 import {Image} from '../../atoms/Image';
+import {Text} from '../../atoms/Text';
 import styles from './styles';
 
 export const ArticleItem: React.FC<Article> = React.memo(
   ({urlToImage, author, title}) => {
+    const {colors} = useTheme();
     return (
-      <View style={styles.articleContainer}>
+      <TouchableOpacity
+        style={[styles.articleContainer, {borderBottomColor: colors.border}]}>
         <Image style={styles.articleImage} source={{uri: urlToImage}} />
         <View style={styles.descriptionContainer}>
           <Text style={[styles.text, styles.title]}> {author}</Text>
           <Text style={[styles.text, styles.desc]}> {title}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   },
 );

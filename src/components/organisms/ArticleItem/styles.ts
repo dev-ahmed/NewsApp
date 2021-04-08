@@ -8,6 +8,8 @@ export default StyleSheet.create({
     width: metrics.content_width,
     marginVertical: metrics.v_spacing_s,
     flexDirection: 'row',
+    paddingBottom: metrics.v_spacing_s,
+    borderBottomWidth: 1,
   },
   descriptionContainer: {
     width: calcWidth(250),
