@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {StatusBar, useColorScheme} from 'react-native';
 import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 import {Container} from './navigation';
-import {store} from './store';
+import {persistor, store} from './store';
 import {setI18nConfig} from './utils/i18n-helper';
 
 const App = () => {
@@ -17,7 +18,9 @@ const App = () => {
       <StatusBar
         barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
       />
-      <Container />
+      <PersistGate loading={null} persistor={persistor}>
+        <Container />
+      </PersistGate>
     </Provider>
   );
 };
