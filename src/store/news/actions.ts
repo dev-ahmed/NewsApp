@@ -1,10 +1,10 @@
+import {IRootState} from './../index';
 import {endpoints} from '../../constants/endpoints';
 import {get} from '../../utils/api';
 import {memoizedSearch} from '../../utils/search-helper';
 import {
   LIST_NEWS,
   NewsDispatch,
-  NewsState,
   SEARCH_ARTICLES,
   SearchDispatch,
 } from './types';
@@ -16,9 +16,9 @@ export const getNews = () => async (dispatch: NewsDispatch) => {
 
 export const searchArticles = (text: string) => async (
   dispatch: SearchDispatch,
-  getState: () => NewsState,
+  getState: () => IRootState,
 ) => {
-  const {news} = getState();
+  const {news} = getState().newsReducer;
   const newArticles = memoizedSearch(text, news);
   dispatch({type: SEARCH_ARTICLES, search_result: newArticles});
 };

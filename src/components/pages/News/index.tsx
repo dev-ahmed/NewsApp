@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useCallbackOne} from 'use-memo-one';
+import {IRootState} from '../../../store';
 import {getNews, searchArticles} from '../../../store/news/actions';
-import {NewsState} from '../../../store/news/types';
 import {Container} from '../../atoms/Container';
 import {SearchBar} from '../../organisms/SearchBar';
 import {NewsList} from '../../templates/NewsList';
@@ -12,9 +12,9 @@ export const News: React.FC = React.memo(({}) => {
   const [searchKey, setSearchKey] = useState('');
 
   const dispatch = useDispatch();
-  const {news, search_result} = useSelector((state: NewsState) => ({
-    news: state.news,
-    search_result: state.search_result,
+  const {news, search_result} = useSelector((state: IRootState) => ({
+    news: state.newsReducer.news,
+    search_result: state.newsReducer.search_result,
   }));
 
   const initialFetch = useCallbackOne(() => {

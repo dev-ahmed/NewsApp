@@ -29,7 +29,7 @@ export const NewsList: React.FC<Props> = React.memo(
         keyExtractor={(item, index) => index.toString()}
         renderItem={_renderArticle}
         data={data}
-        style={[styles.container, style]}
+        style={[style]}
         refreshControl={
           <RefreshControl
             refreshing={refreshing}

@@ -3,13 +3,19 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from '@react-navigation/native';
-import * as React from 'react';
-import {useColorScheme} from 'react-native';
+import React from 'react';
+import {useSelector} from 'react-redux';
 import {RootStack} from './root-navigation';
+import {IRootState} from '../store';
 
-export const Container = () => {
-  const scheme = useColorScheme();
-  const isDark = scheme === 'dark';
+export const Container: React.FC = () => {
+  const {theme} = useSelector((state: IRootState) => {
+    return {
+      theme: state.settingsReducer.theme,
+    };
+  });
+
+  const isDark = theme === 'dark';
 
   return (
     <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>

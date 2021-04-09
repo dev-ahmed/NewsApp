@@ -1,19 +1,14 @@
-import {
-  LIST_NEWS,
-  NewsAction,
-  NewsState,
-  SearchAction,
-  SEARCH_ARTICLES,
-} from './types';
+import {Reducer} from 'redux';
+import {LIST_NEWS, NewsActions, NewsState, SEARCH_ARTICLES} from './types';
 
-const initialState: NewsState = {
+const initialState = {
   news: [],
   search_result: [],
 };
 
-export const newsReducer = (
+export const newsReducer: Reducer<NewsState, NewsActions> = (
   state = initialState,
-  action: NewsAction | SearchAction,
+  action,
 ) => {
   switch (action.type) {
     case LIST_NEWS:

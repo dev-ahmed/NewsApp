@@ -3,7 +3,9 @@ import {metrics} from '../../../constants/metrics';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    padding: metrics.h_spacing_l,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: metrics.h_spacing_s,
   },
 });
