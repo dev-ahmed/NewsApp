@@ -1,9 +1,11 @@
 import {StyleSheet} from 'react-native';
 import {metrics} from '../../../constants/metrics';
+import {calcHeight} from '../../../utils/normalize';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    padding: metrics.h_spacing_l,
+    paddingHorizontal: metrics.h_spacing_l,
+    paddingTop: calcHeight(50),
+    paddingBottom: 0,
   },
 });

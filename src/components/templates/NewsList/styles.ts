@@ -3,6 +3,6 @@ import {metrics} from '../../../constants/metrics';
 
 export default StyleSheet.create({
   listContainer: {
-    paddingVertical: metrics.v_spacing_xl,
+    paddingBottom: metrics.v_spacing_xl,
   },
 });

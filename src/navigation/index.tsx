@@ -7,6 +7,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {RootStack} from './root-navigation';
 import {IRootState} from '../store';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 export const Container: React.FC = () => {
   const {theme} = useSelector((state: IRootState) => {
@@ -18,8 +19,10 @@ export const Container: React.FC = () => {
   const isDark = theme === 'dark';
 
   return (
-    <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
-      <RootStack />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
+        <RootStack />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
