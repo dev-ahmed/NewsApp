@@ -20,4 +20,4 @@ export type ThemeDispatch = (args: ChangeThemeAction) => ChangeThemeAction;
 export type LanguageDispatch = (
   args: ChangeLanguageAction,
 ) => ChangeLanguageAction;
-export type ThemeActions = ChangeThemeAction;
+export type SettingsAction = ChangeThemeAction | ChangeLanguageAction;

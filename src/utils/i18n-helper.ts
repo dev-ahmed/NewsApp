@@ -2,7 +2,7 @@ import memoize from 'lodash.memoize';
 import {TranslateOptions} from 'i18n-js';
 import {I18nManager} from 'react-native';
 import i18n from 'i18n-js';
-// import RNRestart from 'react-native-restart';
+import RNRestart from 'react-native-restart';
 
 const translationGetters = {
   en: () => require('../locales/en'),
@@ -24,4 +24,9 @@ export const setI18nConfig = () => {
   I18nManager.forceRTL(isRTL);
   i18n.translations = {[languageTag]: translationGetters[languageTag]()};
   i18n.locale = languageTag;
+};
+
+export const setRtl = (isRtl: boolean) => {
+  I18nManager.forceRTL(isRtl);
+  RNRestart.Restart();
 };

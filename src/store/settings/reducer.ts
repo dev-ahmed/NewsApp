@@ -1,12 +1,17 @@
 import {Reducer} from 'redux';
-import {ThemeActions, CHANGE_THEME, SettingsState} from './types';
+import {
+  CHANGE_LANGUAGE,
+  CHANGE_THEME,
+  SettingsAction,
+  SettingsState,
+} from './types';
 
 const initialState = {
   theme: 'light',
   language: 'en',
 };
 
-export const settingsReducer: Reducer<SettingsState, ThemeActions> = (
+export const settingsReducer: Reducer<SettingsState, SettingsAction> = (
   state = initialState,
   action,
 ) => {
@@ -15,6 +20,11 @@ export const settingsReducer: Reducer<SettingsState, ThemeActions> = (
       return {
         ...state,
         theme: action.theme,
+      };
+    case CHANGE_LANGUAGE:
+      return {
+        ...state,
+        language: action.language,
       };
     default:
       return state;
