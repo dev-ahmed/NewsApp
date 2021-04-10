@@ -20,7 +20,7 @@ export const Container: React.FC = () => {
   const isDark = theme === 'dark';
 
   const linking: LinkingOptions = {
-    prefixes: ['https://news.com', 'news://'],
+    prefixes: ['news://'],
     config: {
       screens: {
         News: 'news',
