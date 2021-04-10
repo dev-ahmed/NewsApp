@@ -1,6 +1,7 @@
 import {
   DarkTheme,
   DefaultTheme,
+  LinkingOptions,
   NavigationContainer,
 } from '@react-navigation/native';
 import React from 'react';
@@ -18,9 +19,21 @@ export const Container: React.FC = () => {
 
   const isDark = theme === 'dark';
 
+  const linking: LinkingOptions = {
+    prefixes: ['https://news.com', 'news://'],
+    config: {
+      screens: {
+        News: 'news',
+        Details: 'news/:id',
+      },
+    },
+  };
+
   return (
     <SafeAreaProvider>
-      <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
+      <NavigationContainer
+        linking={linking}
+        theme={isDark ? DarkTheme : DefaultTheme}>
         <RootStack />
       </NavigationContainer>
     </SafeAreaProvider>
